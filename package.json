@@ -1,0 +1,15 @@
+{
+  "name": "adventofcode2020",
+  "version": "1.0.0",
+  "description": "Advent Of Code 2020 Solutions",
+  "scripts": {
+    "test": "jest --verbose ./*spec*",
+    "watch": "jest --verbose --watch ./*spec*"
+  },
+  "type": "module",
+  "author": "Philip Valentino",
+  "license": "MIT",
+  "devDependencies": {
+    "jest": "^26.6.3"
+  }
+}
