@@ -25,7 +25,7 @@ console.log("Sum of counts anyone answered yes:", anyoneAnswerYes)
 ]
 */
 
-//  helper
+// helper
 const tally = function (acc, curr) {
   if (typeof acc[curr] == "undefined") {
     acc[curr] = 1

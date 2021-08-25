@@ -1,3 +1,4 @@
+// data
 export const data = `syz
 cywjs
 jptzy
