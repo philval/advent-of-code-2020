@@ -1,6 +1,6 @@
 import { data } from "./encodingErrorData.js"
 
-// STRATEGY
+// STRATEGY PART ONE
 // loop over data to capture i) preamble data ii) "next number" to validate against XMAS cypher
 // loop over preamble data, eliminate duplicates, generate all possible sums of any two numbers
 // test nextNumber againt all possible sums of any two numbers, break if not found & log answer
@@ -37,5 +37,36 @@ for (
     // 133015568
     console.log("Day 9: Encoding Error Part 1", nextNumber)
     break
+  }
+}
+
+// STRATEGY PART TWO
+// loop over all data, get contigiousSet
+// if sum of contigiousSet = magic number
+// then discard sets < length === 2
+// then add lowest number + highest number of contigiousSet
+// log answer
+// break
+
+for (let start = 0; start < parsedData.length; start++) {
+  for (let end = start; end < parsedData.length; end++) {
+    let contigiousSet = []
+    let contigiousSum = 0
+
+    contigiousSet = parsedData.slice(start, end)
+
+    // at least 2 numbers, calc sum
+    if (contigiousSet.length > 1) {
+      contigiousSum = contigiousSet.reduce((acc, total) => acc + total)
+    }
+    // magic number from Part 1
+    if (contigiousSum === 133015568) {
+      // 16107959
+      console.log(
+        "Day 9: Encoding Error Part 2",
+        Math.min(...contigiousSet) + Math.max(...contigiousSet)
+      )
+      break
+    }
   }
 }
