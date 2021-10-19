@@ -46,3 +46,40 @@ for (let i = 0; i < chain.length; i++) {
 
 // 1690
 console.log("Day 10: Adapter Array Part 1 ", diff1 * diff3)
+
+// STRATEGY PART TWO
+
+// need calculate all valid PATHS through the chain
+// do NOT need to use all Adaptors...
+// do need to "follow" the rules
+
+// there is a chain where we always pick the next lowest rated adaptor i.e. longest chain
+// there is a chain where we always pick the next highest rated adaptor i.e. shortest chain
+// and all the combinations in between
+
+// hint "there must be an efficient way to count the arrangements."
+// example answer is 19208 ... it compounds ( not additive )
+
+// insight: for each adapter, how many new paths are possible... 2 or 3
+
+/*
+example given:
+chain | paths
+
+0
+1   
+4   3 // six possible paths
+5   2 // two possible paths - is this double counting ?
+6
+7   
+10  2 // two possible paths
+11  
+12
+15
+16
+19
+22
+
+total 8 paths
+
+*/
